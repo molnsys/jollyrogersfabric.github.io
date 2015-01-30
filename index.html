@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="store">
+<head>
+
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<base href="http://jollyrogers.businesscatalyst.com/moltin/">
+  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Montserrat:200,300,400,600,700">
+  <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:200,300,400,600,700">
+  <link rel="stylesheet" type="text/css" href="/css/store.min.css">
+
+  <script type="text/javascript" src="/js/store.min.js"></script>
+
+  <title>{{ title }} &bull; {{ siteName }}</title>
+
+</head>
+<body>
+  
+  <div class="page-container">
+  
+    <div class="header">
+      <nav class="navbar container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a href="/" class="navbar-brand">
+            <img src="/img/logo.png" alt="{{ siteName }}" />{{ siteName }}
+          </a>
+        </div>
+        <div class="navbar-collapse collapse navbar-right">
+          <ul class="nav navbar-nav">
+            <li ng-class="{dropdown: category.children}" ng-repeat="category in categories | limitTo: 6">
+              <a data-toggle="dropdown" class="dropdown-toggle" href="/category/{{ category.slug }}" ng-if="category.children">{{ category.title }} <b class="caret"></b></a>
+              <a href="/category/{{ category.slug }}" ng-if="!category.children">{{ category.title }}</a>
+              <ul class="dropdown-menu" ng-if="category.children">
+                <li ng-repeat-start="child in category.children" ng-if="child.children" class="dropdown-header"><a href="/category/{{ child.slug }}">{{ child.title }}</a></li>
+                <li ng-if="child.children" ng-repeat="sub in child.children"><a href="/category/{{ sub.slug }}">{{ sub.title }}</a></li>
+                <li ng-if="child.children" class="divier"></li>
+                <li ng-if="!child.children" ng-repeat-end><a href="/category/{{ child.slug }}">{{ child.title }}</a></li>
+              </ul>
+            </li>
+          </ul>
+          <ul class="nav navbar-right cart">
+            <li class="dropdown">
+              <a href="/cart" class="dropdown-toggle" data-toggle="dropdown"><span>{{ cart.total_items }}</span></a>
+              <div class="cart-info dropdown-menu">
+                <table class="table">
+                  <tbody>
+                    <tr ng-repeat="(key, product) in cart.contents">
+                      <td class="image"><img alt="Image" class="img-responsive" ng-src="{{ Page.image.resize(product.image, 100, 100) }}" /></td>
+                      <td class="name"><a href="/product/{{ product.slug }}">{{ product.title }}</a></td>
+                      <td class="quantity">x&nbsp;{{ product.quantity }}</td>
+                      <td class="total"></td>
+                      <td class="remove"><img src="/img/remove-small.png" alt="Remove" title="Remove" ng-id="{{ key }}" ng-qty="0" cart-qty /></td>
+                    </tr>
+                  </tbody>
+                </table>
+                <div class="cart-total">
+                  <table>
+                    <tbody>
+                    <tr>
+                      <td><b>Sub-Total:&nbsp;</b></td>
+                      <td>&nbsp;{{ cart.totals.formatted.without_tax }}</td>
+                    </tr>
+                    <tr>
+                      <td><b>Total:&nbsp;</b></td>
+                      <td>&nbsp;{{ cart.totals.formatted.with_tax }}</td>
+                    </tr>
+                    </tbody>
+                  </table>
+                  <div class="checkout">
+                    <a href="/cart" class="ajax_right">View Cart</a> | <a href="/checkout" class="ajax_right">Checkout</a>
+                  </div>
+                </div>
+              </div>
+            </li>
+          </ul>
+          <form class="navbar-form navbar-search navbar-right" role="search" ng-submit="Page.search(term)">
+            <div class="input-group"> 
+              <input type="text" name="search" ng-model="term" placeholder="Search" class="search-query col-md-2" />
+              <button type="submit" class="btn btn-default icon-search"></button> 
+            </div>
+          </form>
+        </div>
+      </nav>
+    </div>
+  
+    <div class="container">
+      <div ng-repeat="(key,notice) in notices" ng-click="Page.notice.dismiss(key)" class="alert alert-{{ notice.type }}" ng-bind-html="notice.msg"></div>
+      <div ng-view></div>
+    </div>
+  
+    <div class="footer black">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-3">
+            <div>
+              <h3>Information</h3>
+              <ul>
+                <li ng-repeat="page in pages" ng-if="page.menu.data.key == 'info'"><a href="/{{ page.slug }}">{{ page.title }}</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <div>
+              <h3>Customer Service</h3>
+              <ul>
+                <li ng-repeat="page in pages" ng-if="page.menu.data.key == 'customer'"><a href="/{{ page.slug }}">{{ page.title }}</a></li>
+              </ul> 
+            </div>
+          </div>
+          <div class="col-md-3"></div>
+          <div class="col-md-3 social">
+            <div class="copy">Copyright &copy; {{ siteName }}</div>
+            <ul class="social-network">
+              <li><a href=""><i class="fa fa-facebook"></i></a></li>
+              <li><a href=""><i class="fa fa-google-plus"></i></a></li>
+              <li><a href=""><i class="fa fa-pinterest"></i></a></li>
+              <li><a href=""><i class="fa fa-rss"></i></a></li>
+              <li><a href=""><i class="fa fa-twitter"></i></a></li> 
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <div id="loader" ng-if="loader.done < loader.todo"></div>
+
+</body>
+</html>
