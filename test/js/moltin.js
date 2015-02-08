@@ -656,6 +656,9 @@ Moltin = (function() {
       return this.m.Request('product/' + id + '/variations', 'GET', null, callback, error);
     };
 
+    Product.prototype.Create = function(data, callback, error) {
+      return this.m.Request('product', 'POST', data, callback, error);
+    };
     return Product;
 
   })();
