@@ -42,7 +42,7 @@ moltin.Product.Search({status: 1}, function(products) {
       $('<div class="success">Authentication successful</div>').prependTo($('body'));
       $('.ready').show();
       // API calls here...
-moltin.Product.Create({"sku": "rfrfrfrf1","title": "Title test","slug":"sluggen","price":23,"status":1,"category":1,"stock_level":4,"stock_status":0,"description":"Beskrivning av dt2","requires_shipping":1,"sale_price":25}, function(products) {
+moltin.Product.Create({"sku": "rfrfrfrf1","title": "Title test","slug":"sluggen","price":23,"status":2,"category":1,"stock_level":4,"stock_status":0,"description":"Beskrivning av dt2","requires_shipping":1,"sale_price":25}, function(products) {
   console.log(products);
 });
     });
