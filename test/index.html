@@ -42,7 +42,9 @@ moltin.Product.Search({status: 1}, function(products) {
       $('<div class="success">Authentication successful</div>').prependTo($('body'));
       $('.ready').show();
       // API calls here...
-
+moltin.Product.Search({status: 1}, function(products) {
+  console.log(products);
+});
     });
     
   </script>
