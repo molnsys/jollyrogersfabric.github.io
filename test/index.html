@@ -1,0 +1,51 @@
+<!doctype html>
+<head>
+  <meta charset="utf-8">
+
+  <title>My Moltin App</title>
+  <meta name="description" content="My Moltin App">
+  <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/styles.css">
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+  <script type="text/javascript" src="js/moltin.js"></script>
+  <!-- CDN - <script type="text/javascript" src="https://js.moltin.com/moltin.min.js"></script> -->
+</head>
+
+<body>
+  
+  <div id="main">
+
+    <div class="ready">
+      <h1>You're ready to use Moltin!</h1>
+      <p>You can now make API calls to the Moltin API, why not try getting your live products with the code below?</p>
+      <pre><code class="javascript">
+moltin.Product.Search({status: 1}, function(products) {
+  console.log(products);
+});
+      </code></pre>
+    </div>
+
+    <p>Read the documentation and start building your JavaScript app:</p>
+
+    <ul>
+      <li><a href="https://moltin.com/getting-started/js">Moltin JavaScript Quickstart Guide</a></li>
+      <li><a href="https://docs.molt.in">Moltin API Documentation</a></li>
+    </ul>
+
+  </div>
+
+  <script type="text/javascript">
+
+    var moltin = new Moltin({publicId: 'YFWE8D0RnpBHxwnyck0DjoHT0SXFP48FdArlMLMy', notice: function(type, msg) { $('<div class="'+type+'">'+msg+'</div>').prependTo($('body')); } });
+    moltin.Authenticate(function() {
+      $('<div class="success">Authentication successful</div>').prependTo($('body'));
+      $('.ready').show();
+      // API calls here...
+
+    });
+    
+  </script>
+</body>
+
+</html>
