@@ -43,22 +43,23 @@ moltin.Product.Search({status: 1}, function(products) {
       $('.ready').show();
  
         // API calls here... 915470231919395827
-/**
-moltin.Product.Create({"sku": "rfrfrfrf1","title": "Title test","slug":"sluggen","price":23,"status":1,"category":1,"stock_level":4,"stock_status":0,"description":"Beskrivning av dt2","requires_shipping":1,"tax_band": 1,"sale_price":25,"catalog_only":0}, function(products) {
+
+moltin.Product.Create({"sku": "rfrfrfrddfff1","title": "Title test","slug":"sluggen","price":23,"status":{value: "Live"},"category":{"value": "Angels"},"stock_level":4,"stock_status":0,"description":"Beskrivning av dt2","requires_shipping":{"key": "0","value": "Yes"},"tax_band":{value: "Default"},"sale_price":25,"catalog_only":{key: "1", "value": "Yes"}}, function(products) {
   console.log(products);
 });
        
-        
+/**        
 moltin.Product.get({id: 915470231919395827}, function(products) {
   console.log(products);
 });   
-*/         
+        
 var product = moltin.Product.Find({'slug': 'test'}); 
         
 var product2 = moltin.Product.Search({status: 1});        
   
          console.log(product);
         console.log(product2);
+*/         
     });
     
   </script>
