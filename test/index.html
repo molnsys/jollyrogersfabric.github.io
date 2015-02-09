@@ -49,9 +49,9 @@ moltin.Product.Create({"sku": "rrf34sfdfff1","title": "Title test","slug":"slugg
 });
 */       
       
-moltin.Product.get(915470231919395827, function(products) {
-  console.log(products);
-});   
+var prod1 = moltin.Product.get(915470231919395827);  
+        
+console.log(prod1);        
 /**         
 var product = moltin.Product.Find({'slug': 'test'}); 
         
