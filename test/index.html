@@ -51,7 +51,16 @@ moltin.Product.Create({"sku": "rfrfrfrf1","title": "Title test","slug":"sluggen"
         
 moltin.Product.get({id: 915470231919395827}, function(products) {
   console.log(products);
+});   
+        
+var product = moltin.product.find({'slug' => 'test'}); 
+        
+var product2 = moltin.Product.Search({status: 1}, function(products) {
+ 
 });        
+  
+         console.log(product);
+        console.log(product2);
     });
     
   </script>
