@@ -628,6 +628,10 @@ Moltin = (function() {
       return this.m.Request('product/' + id, 'GET', null, callback, error);
     };
 
+    Product.prototype.Update = function(id, data, callback, error) {
+      return this.m.Request('product/' + id, 'PUT', data, callback, error);
+    };
+      
     Product.prototype.Find = function(terms, callback, error) {
       return this.m.Request('product', 'GET', terms, callback, error);
     };

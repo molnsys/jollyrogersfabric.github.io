@@ -43,7 +43,16 @@ moltin.Product.Search({status: 1}, function(products) {
       $('.ready').show();
  
         // API calls here... 915470231919395827
-
+        
+        moltin.Product.Update({917557547781586978,"images":{"name": "fonduepot1.jpg",
+        "url": {
+          "http": "http://d2xufakadxl3ok.cloudfront.net/1/fonduepot1.jpg",
+          "https": "https://d2xufakadxl3ok.cloudfront.net/1/fonduepot1.jpg"
+        }}}, function(products) {
+  console.log(products);
+});
+        
+/**
 moltin.Product.Create({"sku": "rrf34sfdfff1-12","title": "Title test","slug":"sluggen-12","price":23,"status":0,"category":0,"stock_level":4,"stock_status":0,"description":"Beskrivning av dt2","requires_shipping":0,"tax_band":"0","sale_price":25,"catalog_only":0,"images":{"name": "fonduepot1.jpg",
         "url": {
           "http": "http://d2xufakadxl3ok.cloudfront.net/1/fonduepot1.jpg",
@@ -51,7 +60,8 @@ moltin.Product.Create({"sku": "rrf34sfdfff1-12","title": "Title test","slug":"sl
         }}}, function(products) {
   console.log(products);
 });
-
+*/
+        
         
 /**
 "name": "fonduepot1.jpg",
