@@ -29,6 +29,7 @@ Moltin = (function() {
     this.Gateway = new Gateway(this);
     this.Order = new Order(this);
     this.Product = new Product(this);
+    this.File = new File(this);  
     this.Shipping = new Shipping(this);
     this.Tax = new Tax(this);
     if (this.Storage.get('mcurrency')) {
