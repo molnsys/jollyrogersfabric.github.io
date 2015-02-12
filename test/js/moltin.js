@@ -699,7 +699,7 @@ Moltin = (function() {
       return this.m.Request('file/', 'POST', data, callback, error);
     };
      
-    return Shipping;
+    return File;
 
   })();    
 
