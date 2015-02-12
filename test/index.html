@@ -43,12 +43,17 @@ moltin.Product.Search({status: 1}, function(products) {
       $('.ready').show();
  
         // API calls here... 915470231919395827
-        
+ /*       
         moltin.Product.Update("917557547781586978",{"category":0,"tax_band":"0","images":{"name": "fonduepot1.jpg",
         "url": {
           "http": "http://d2xufakadxl3ok.cloudfront.net/1/fonduepot1.jpg",
           "https": "https://d2xufakadxl3ok.cloudfront.net/1/fonduepot1.jpg"
         }}}, function(products) {
+  console.log(products);
+});
+**/
+        
+moltin.File.Create({"assign_to":"917557547781586978","name":"testimage.png","file":"iVBORw0KGgoAAAANSUhEUgAAABAAAAARCAIAAABbzbuTAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAZtJREFUeNqMUs+rAVEUvjNG2MhClOUsppSEjbWFpOwtMIv5B2ZhZqkkZKkpe+XPYKtsbSxsZIGaQpgi4r3Pu5p3eV45dW/nnPt959zzg5RKpU6n8/WxkHq9LghCs9n8lICjKAohpFwuf0LgcCzLSqfTo9FIVVVd10He7XbX6/V8Pu/3e47jcB+Px0AgkEqlCOXNZjNJkgB1/wg+6XA4ACXPomkasXM1Gg3yj4AZi8WAHgwGgu1dLpcvOKRKJBLZbDaTyYDgdDrvXjtDLpd7yT6dTv8WzdNnaPP53A6Mezgc+v3+N/+jvO12GwwGqQfFYJRQksnker1+MwfIZDLxeDwA+Xy+xWIBT6VSgYk+Hg4HlvAoerVaodNQ8vl8KBSCUqvVAG2326g4EolsNhuYGNQjQ6/XAwh9GI/HbDxZltn/o2OPDBgctaPRKIsQRZEqWJxisXg3aaRCoQBvv99nw59Op3A4DH+1Wu12u09FYwh4w/6wBGwUOhuPx6FfLpfb7fZbtGEYpmnyPM/+x+v1tlotl8sFHdtFnd8CDACAg6Y2weEZQQAAAABJRU5ErkJggg=="}, function(products) {
   console.log(products);
 });
         

@@ -3,7 +3,7 @@ var Moltin,
 
 Moltin = (function() {
   "use strict";
-  var Address, Brand, Cart, Category, Checkout, Collection, Currency, Entry, Gateway, Order, Product, Shipping, Storage, Tax;
+  var Address, Brand, Cart, Category, Checkout, Collection, Currency, Entry, Gateway, Order, Product, Shipping, Storage, Tax, File;
 
   Moltin.prototype.options = {
     publicId: '',
@@ -684,6 +684,23 @@ Moltin = (function() {
     return Shipping;
 
   })();
+    
+ File = (function() {
+    function File(m) {
+      this.m = m;
+    }
+
+    File.prototype.Get = function(id, callback, error) {
+      return this.m.Request('file/' + id, 'GET', null, callback, error);
+    };
+
+    File.prototype.Create = function(data, callback, error) {
+      return this.m.Request('file/', 'POST', data, callback, error);
+    };
+     
+    return Shipping;
+
+  })();    
 
   Tax = (function() {
     function Tax(m) {
