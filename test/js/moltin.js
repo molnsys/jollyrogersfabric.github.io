@@ -176,8 +176,8 @@ Moltin = (function() {
       },
       async: typeof callback === 'function' ? true : false,
       headers: {
-        //'Content-Type': 'application/x-www-form-urlencoded'
-        'Content-Type': 'multipart/form-data'
+        'Content-Type': 'application/x-www-form-urlencoded'
+        //'Content-Type': 'multipart/form-data'
       },
       success: (function(_this) {
         return function(r, c, e) {
