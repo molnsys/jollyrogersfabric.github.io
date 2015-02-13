@@ -174,11 +174,11 @@ Moltin = (function() {
       url: this.options.url + 'oauth/access_token',
       data: {
         grant_type: 'implicit',
-        client_id: this.options.publicId
+        client_id: this.options.publicId 
       },
       async: typeof callback === 'function' ? true : false,
       headers: {
-        'Content-Type': 'application/x-www-form-urlencoded'
+       // 'Content-Type': 'application/x-www-form-urlencoded'
         //'Content-Type': 'multipart/form-data'
       },
       success: (function(_this) {
