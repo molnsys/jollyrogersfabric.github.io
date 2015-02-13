@@ -8,8 +8,10 @@ Moltin = (function() {
   Moltin.prototype.options = {
     publicId: '',
     auth: {},
-    url: 'https://api.molt.in/',
-    version: 'beta',
+    //url: 'https://api.molt.in/',
+    url: 'https://api.moltin.com/',
+    //version: 'beta',
+    version: 'v1',  
     debug: false,
     currency: false,
     methods: ['GET', 'POST', 'PUT', 'DELETE']
