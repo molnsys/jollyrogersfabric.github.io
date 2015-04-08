@@ -9,7 +9,9 @@ angular.module( 'sample.home', [
     // Just call the API as you'd do using $http
     $http({
       url: 'https://faktaochkunskap-moltin-e-commerce-v1.p.mashape.com/oauth/access_token',
-      method: 'POST'
+      method: 'POST',
+    headers: { 'X-Mashape-Key: 6DpI2WC9YbmshTmcAkJI7fsTSe0sp1LraCpjsnclhdnIqs0Gon',
+              'Accept: application/json'    
     }).then(function() {
       alert("We got the bearer token data successfully");
     }, function(response) {
@@ -18,8 +20,29 @@ angular.module( 'sample.home', [
       }
       else {
         alert(response.data);
+    // get products    
+         
+          /**
+        $http({
+      url: 'https://faktaochkunskap-moltin-e-commerce-v1.p.mashape.com/v1/products/search',
+      method: 'GET',
+    headers: { 'X-Mashape-Key: 6DpI2WC9YbmshTmcAkJI7fsTSe0sp1LraCpjsnclhdnIqs0Gon',
+              'Accept: application/json',
+              'Authorization': response.data.access_token 
+    }).then(function() {
+      alert("We got the bearer token data successfully");
+    },
+     function(response) {
+      if (response.status == 0) {
+        alert("Please download the API seed so that you can call it.");
+      }
+      else {
+        alert(response.data);        
+          }  
       }
     });
+        */  
+          
   }
 
   $scope.logout = function() {
