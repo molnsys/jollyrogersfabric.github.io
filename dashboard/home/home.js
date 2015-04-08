@@ -20,6 +20,9 @@ angular.module( 'sample.home', [
       }
       else {
         alert(response.data);
+         }
+    });
+  }
     // get products    
          
           /**
@@ -41,9 +44,9 @@ angular.module( 'sample.home', [
           }  
       }
     });
-        */  
-    }      
-  }
+        */ 
+          
+       
 
   $scope.logout = function() {
     auth.signout();
