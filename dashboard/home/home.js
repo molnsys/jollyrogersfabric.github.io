@@ -9,9 +9,9 @@ angular.module( 'sample.home', [
     // Just call the API as you'd do using $http
     $http({
       url: 'https://faktaochkunskap-moltin-e-commerce-v1.p.mashape.com/oauth/access_token',
-      method: 'POST',
+      method: 'POST'/**,
     headers: { 'X-Mashape-Key': '6DpI2WC9YbmshTmcAkJI7fsTSe0sp1LraCpjsnclhdnIqs0Gon',
-              'Accept': 'application/json'}    
+              'Accept': 'application/json'} */   
     }).then(function() {
       alert("We got the bearer token data successfully");
     }, function(response) {
