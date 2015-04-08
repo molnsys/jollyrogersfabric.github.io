@@ -19,7 +19,7 @@ angular.module( 'sample.home', [
         alert("Please download the API seed so that you can call it.");
       }
       else {
-        alert(response.data);
+        alert(response.data.access_token);
          }
     });
   }
