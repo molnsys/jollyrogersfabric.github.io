@@ -8,10 +8,10 @@ angular.module( 'sample.home', [
   $scope.callApi = function() {
     // Just call the API as you'd do using $http
     $http({
-      url: 'http://localhost:3001/secured/ping',
-      method: 'GET'
+      url: 'https://faktaochkunskap-moltin-e-commerce-v1.p.mashape.com/oauth/access_token',
+      method: 'POST'
     }).then(function() {
-      alert("We got the secured data successfully");
+      alert("We got the bearer token data successfully");
     }, function(response) {
       if (response.status == 0) {
         alert("Please download the API seed so that you can call it.");
