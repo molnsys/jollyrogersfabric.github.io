@@ -42,7 +42,7 @@ angular.module( 'sample.home', [
       }
     });
         */  
-    };      
+    }      
   }
 
   $scope.logout = function() {
