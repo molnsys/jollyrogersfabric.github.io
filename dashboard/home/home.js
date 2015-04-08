@@ -20,7 +20,7 @@ angular.module( 'sample.home', [
       }
       else {
         alert(response.data.access_token);
-          console.log(data);
+          console.log(response.data);
          }
     });
   }
