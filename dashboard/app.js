@@ -32,10 +32,12 @@ angular.module( 'sample', [
     return store.get('token');
   }
 
+    $httpProvider.defaults.useXDomain = true;
+    delete $httpProvider.defaults.headers.common['X-Requested-With'];
   // Add a simple interceptor that will fetch all requests and add the jwt token to its authorization header.
   // NOTE: in case you are calling APIs which expect a token signed with a different secret, you might
   // want to check the delegation-token example
-  $httpProvider.interceptors.push('jwtInterceptor');
+  $httpProvider.interceptors.push('jwtInterceptor');  
 }).run(function($rootScope, auth, store, jwtHelper, $location) {
   $rootScope.$on('$locationChangeStart', function() {
     if (!auth.isAuthenticated) {
