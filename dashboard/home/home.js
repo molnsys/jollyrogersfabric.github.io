@@ -21,7 +21,8 @@ angular.module( 'sample.home', [
       url: 'https://faktaochkunskap-moltin-e-commerce-v1.p.mashape.com/oauth/access_token',
       method: 'POST',
     headers: { 'X-Mashape-Key': '6DpI2WC9YbmshTmcAkJI7fsTSe0sp1LraCpjsnclhdnIqs0Gon',             
-              'Accept': 'application/json'}   
+              'Accept': 'application/json',
+             'Content-Type': 'application/x-www-form-urlencoded'}   
     }).then(function() {
       alert("We got the bearer token data successfully");
     }, function(response) {
