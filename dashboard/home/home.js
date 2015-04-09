@@ -7,11 +7,21 @@ angular.module( 'sample.home', [
 
   $scope.callApi = function() {
     // Just call the API as you'd do using $http
+    curl -X POST --include 'https://faktaochkunskap-moltin-e-commerce-v1.p.mashape.com/oauth/access_token' \
+  -H 'X-Mashape-Key: 6DpI2WC9YbmshTmcAkJI7fsTSe0sp1LraCpjsnclhdnIqs0Gon' \
+  -H 'Content-Type: application/x-www-form-urlencoded' \
+  -H 'Accept: application/json' \
+  -d 'client_id=YFWE8D0RnpBHxwnyck0DjoHT0SXFP48FdArlMLMy' \
+  -d 'client_secret=dnzIYu8GrjN87WZ9d3KvmQWuo4dE9WcQWi9o8Cyy' \
+  -d 'grant_type=client_credentials'  
+      
+      
+      
     $http({
       url: 'https://faktaochkunskap-moltin-e-commerce-v1.p.mashape.com/oauth/access_token',
-      method: 'POST'/**,
-    headers: { 'X-Mashape-Key': '6DpI2WC9YbmshTmcAkJI7fsTSe0sp1LraCpjsnclhdnIqs0Gon',
-              'Accept': 'application/json'} */   
+      method: 'POST',
+    headers: { 'X-Mashape-Key': '6DpI2WC9YbmshTmcAkJI7fsTSe0sp1LraCpjsnclhdnIqs0Gon',             
+              'Accept': 'application/json'}   
     }).then(function() {
       alert("We got the bearer token data successfully");
     }, function(response) {
