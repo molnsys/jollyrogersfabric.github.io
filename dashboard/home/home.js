@@ -16,7 +16,7 @@ angular.module( 'sample.home', [
   });*/
       
     
-var params = JSON.stringify({foo: $scope.foo});
+var params = JSON.stringify({'X-Mashape-Key': "6DpI2WC9YbmshTmcAkJI7fsTSe0sp1LraCpjsnclhdnIqs0Gon", 'Content-Type':'application/x-www-form-urlencoded'});
       
     var url = "https://faktaochkunskap-moltin-e-commerce-v1.p.mashape.com/oauth/access_token" + "?callback=JSON_CALLBACK" + params;
 
