@@ -4,7 +4,8 @@ angular.module( 'sample', [
   'sample.home',
   'sample.login',
   'angular-storage',
-  'angular-jwt'
+  'angular-jwt'/**,
+    'ngResource'*/
 ])
 .config( function myAppConfig ( $routeProvider, authProvider, $httpProvider, $locationProvider,
   jwtInterceptorProvider) {
@@ -21,7 +22,12 @@ angular.module( 'sample', [
       pageTitle: 'Login'
     });
 
-
+/**
+    app.factory("Post", function($resource) {
+  return $resource("https://faktaochkunskap-moltin-e-commerce-v1.p.mashape.com/oauth/access_token");
+});
+*/    
+    
   authProvider.init({
     domain: AUTH0_DOMAIN,
     clientID: AUTH0_CLIENT_ID,
