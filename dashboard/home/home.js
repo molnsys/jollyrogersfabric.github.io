@@ -15,8 +15,8 @@ angular.module( 'sample.home', [
     headers: { 'grant_type': 'client_credentials',             
               'Accept': 'application/json',
              'Content-Type': 'application/x-www-form-urlencoded',
-             , "client_id": "YFWE8D0RnpBHxwnyck0DjoHT0SXFP48FdArlMLMy", 
-              "client_secret": "dnzIYu8GrjN87WZ9d3KvmQWuo4dE9WcQWi9o8Cyy"}   
+             , 'client_id': 'YFWE8D0RnpBHxwnyck0DjoHT0SXFP48FdArlMLMy', 
+              'client_secret': 'dnzIYu8GrjN87WZ9d3KvmQWuo4dE9WcQWi9o8Cyy'}   
     }).then(function() {
       alert("We got the bearer token data successfully");
     }, function(response) {
