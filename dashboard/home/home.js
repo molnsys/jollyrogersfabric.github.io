@@ -10,7 +10,7 @@ angular.module( 'sample.home', [
   $scope.callApi = function() {
     // Just call the API as you'd do using $http
   $http({
-      url: 'http://nodejs-jollyrogers.rhcloud.com/secured',
+      url: 'https://nodejs-jollyrogers.rhcloud.com/secured',
       method: 'GET'
     }).then(function() {
       alert("We got the bearer token data successfully");
