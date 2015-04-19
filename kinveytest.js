@@ -1,3 +1,11 @@
+{
+     "_id"             : "facebook",
+     "consumer_key"    : "905218366212324",
+     "consumer_secret" : "df416c8c2cc701b98e78e2e59c938cc8"
+ }
+
+
+
 function onRequest(request,response,modules){
     var req = modules.request;
     req.post('https://faktaochkunskap-moltin-e-commerce-v1.p.mashape.com/oauth/access_token', function(error, resp, body){

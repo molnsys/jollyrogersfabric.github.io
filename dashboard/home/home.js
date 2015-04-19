@@ -10,7 +10,22 @@ angular.module( 'sample.home', [
   $scope.callApi = function() {
     // Just call the API as you'd do using $http
   $http({
-      url: 'https://api.molt.in/oauth/access_token',
+      url: 'http://nodejs-jollyrogers.rhcloud.com/secured',
+      method: 'GET'
+    }).then(function() {
+      alert("We got the bearer token data successfully");
+    }, function(response) {
+      if (response.status == 0) {
+        alert("Not authorized.");
+      }
+      else {
+        alert(response.data.access_token);
+          console.log(response.data);
+         }
+    });    
+/**      
+  $http({
+      url: 'http://nodejs-jollyrogers.rhcloud.com/secured',
       method: 'POST',
     headers: { 'grant_type': 'client_credentials',             
               'Accept': 'application/json',
@@ -27,7 +42,7 @@ angular.module( 'sample.home', [
         alert(response.data.access_token);
           console.log(response.data);
          }
-    });     
+    }); */    
 /**   
   Post.query(function(data) {
     $scope.posts = data;
