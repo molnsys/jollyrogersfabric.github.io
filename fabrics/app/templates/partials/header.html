@@ -1,0 +1,23 @@
+<nav class="navbar navbar-static-top navbar-inverse" >
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" ui-sref="app">
+        <span class="glyphicon glyphicon-home"></span> JollyRogers
+      </a>
+    </div>
+
+    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
+      <ul class="nav navbar-nav">
+
+    <li ui-sref-active="active" ng-if="auth.profile"><a ui-sref="app.fabrics">Fabrics</a></li>
+    <li ui-sref-active="active" ng-if="!auth.profile"><a href="" ng-click="login()">Fabrics</a></li>
+    <li ui-sref-active="active"  ng-if="auth.profile"><a href="" ng-click="logout()">Sign Out</a></li>
+    <li ui-sref-active="active"  ng-if="!auth.profile"><a href="" ng-click="login()">Sign In</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+      <li></li>
+      <li class="active" ng-if="auth.profile"><a href>Welcome, {{ auth.profile.name }}</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>

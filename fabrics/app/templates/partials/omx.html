@@ -1,0 +1,33 @@
+<div class="container">
+
+ 
+	<div class="row">
+		<div class="col-sm-8 ">
+            
+<h2>OMX Stockholm Forecast</h2>
+			<!--<div class="jumbotron">-->
+            
+		<div ui-view="detail" class="text-left"></div> 
+            <!--</div>-->
+
+	<p>{{ date | date:'yyyy-MM-dd' }}</p>		
+</div>
+		
+		<div class="col-sm-4 ">
+
+			<div class="well ">
+			  <h3>Stock Symbols</h3>
+            <ul>
+    <li  dir-paginate="show in shows | itemsPerPage: pageSize" current-page="currentPage">
+ 
+        <a ui-sref=".detail({id: show.name})" >{{show.name}}</a>
+       
+    </li>
+</ul>    
+			 <div class="text-center">
+         <dir-pagination-controls max-size="6" template-url="app/directives/pagination/dirPagination.tpl.html"></dir-pagination-controls>
+          </div>
+			</div>
+
+		</div>
+</div></div>
