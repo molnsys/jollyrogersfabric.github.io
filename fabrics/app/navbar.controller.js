@@ -2,7 +2,7 @@
 
 angular.module('iprognos')
   .controller('NavbarCtrl', function ($scope, auth, store, $location, $state) {
-    
+
     //$scope.user = {};
     $scope.auth = auth;
 
@@ -10,7 +10,7 @@ angular.module('iprognos')
       auth.signin({}, function(profile, token) {
         store.set('profile', profile);
         store.set('token', token);
-        $state.go('app.omx.detail', {id: 'AAK'});    
+        $state.go('app.fabrics');    
         console.log($scope.user);
       }, function(error) {
         console.log('There was an error logging in', error);

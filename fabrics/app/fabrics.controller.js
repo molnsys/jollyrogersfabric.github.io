@@ -41,7 +41,7 @@ $scope.startUpload = function(id) {
 
 
     Upload.upload({
-        url: 'http://localhost:8000/api/filer2',
+        url: 'http://nodejs-jollyrogers.rhcloud.com/api/filer2',
         headers: {
             'id': $scope.id,
             'nickname': $scope.auth.profile.nickname,
