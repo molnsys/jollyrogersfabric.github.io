@@ -1,4 +1,4 @@
-var app = angular.module('iprognos', ['auth0','angular-storage','schemaForm','angular-jwt','ngCookies','ui.router', 'restangular','common.fabric','common.fabric.utilities','common.fabric.constants','ngFileUpload','ngAnimate','angularUtils.directives.dirPagination','ui.bootstrap']);
+var app = angular.module('iprognos', ['auth0','angular-storage','schemaForm','angular-loading-bar','angular-jwt','ngCookies','ui.router', 'restangular','common.fabric','common.fabric.utilities','common.fabric.constants','ngFileUpload','ngAnimate','angularUtils.directives.dirPagination','ui.bootstrap']);
 
 app.config(function($stateProvider ,authProvider, $locationProvider,$urlRouterProvider, RestangularProvider, jwtInterceptorProvider,$httpProvider){
 
@@ -55,10 +55,10 @@ app.config(function($stateProvider ,authProvider, $locationProvider,$urlRouterPr
                 templateUrl: 'app/templates/partials/fabrics.html',
                 controller: 'FabricsCtrl'
             }
-        },
+        }/**,
         data: {
           requiresLogin: true
-      }
+      }*/
 
     });
 

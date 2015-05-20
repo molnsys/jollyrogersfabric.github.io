@@ -20,19 +20,14 @@
 
 <div class="row"></div>
 </fieldset>-->
-<progressbar ng-model="file"  class="progress-striped active" animate="true" max="100" value="progressPercentage" type="success"><i><span count-to="{{progressPercentage}}" duration="1" count-from="0"></span> / 100</i></progressbar>
-<fieldset>
-	<progressbar ng-if="files" class="progress-striped active" max="100" value="progressPercentage" type="danger" ng-model="files">{{progressPercentage}}%</progressbar>
 
+<fieldset>
 <!-- form -->
-<div ng-if="files" ng-controller="FabricsCtrl" ng-model="formModel">{{progressPercentage}}%</div>
+
 <div ng-controller="FabricsCtrl">
     <form sf-schema="schema" sf-form="form" sf-model="formModel" name="theForm" ng-submit="upload(files)"
-		sf-options="{ formDefaults: { ngModelOptions: { updateOn: 'blur' } }}">
-	<!--	<button type="button" class="btn btn-success"  ng-click="upload(files)" ng-disabled="theForm.$invalid">Save</button>-->
+		sf-options="{ formDefaults: { ngModelOptions: { updateOn: 'blur' } }}" >
 		</form>
-
-
 </div>
 
 
@@ -49,7 +44,7 @@
 		ngf-accept="'.jpg,.png,.gif'" ngf-change="addImage()">
 
 
-			  <div class='image-builder' ><p ng-if="!files" style="background: white; padding:35px; margin:0px;">Drop Image here </p>
+			  <div class='image-builder' ><p ng-if="!imageSet" style="background: white; padding:35px; margin:0px;">Drop Image here!! </p>
           <div class='fabric-container'>
             <canvas fabric='fabric'  ngf-accept="'image/*'" id="theCanvas"></canvas>
           </div>
@@ -57,7 +52,7 @@
 		</div>
 
 
-<div ng-show="files[0].type.indexOf('image') > -1">{{files[0].name}}</div>
+<div ng-if="filename">{{filename}}</div>
 	</fieldset>
 	</div>
 

@@ -1,10 +1,26 @@
-<div ng-app="iprognos" ng-controller="LoginCtrl">
-<div class="login-page clearfix">
-  <div class="login-box auth0-box">
-    
-    <h3>Login</h3>
-    <p>OMX stockholm market prediction</p>
-    <a ng-click="login()" class="btn btn-primary btn-lg btn-block">SignIn</a>
+<div class="container" >
+
+
+
+  <div class="jumbotron text-center">
+
+    <p class="lead">
+    JollyRogers.
+</p>
+
+
+    <p><a class="btn btn-lg btn-success" ng-click="login()" ng-if="!auth.profile">Sign in!</a>
+      <a class="btn btn-lg btn-success"  ng-if="auth.profile" ui-sref="app.fabrics">Test it now!</a>
+
+    </p>
   </div>
-</div>
+
+  <div class="row">
+    <div class="col-sm-12 col-md-" role="main">
+
+    </div>
+  </div>
+
+
+
 </div>

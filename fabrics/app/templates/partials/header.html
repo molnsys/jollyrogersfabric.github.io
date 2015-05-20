@@ -9,8 +9,8 @@
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
       <ul class="nav navbar-nav">
 
-    <li ui-sref-active="active" ng-if="auth.profile"><a ui-sref="app.fabrics">Fabrics</a></li>
-    <li ui-sref-active="active" ng-if="!auth.profile"><a href="" ng-click="login()">Fabrics</a></li>
+    <li ui-sref-active="active"><a ui-sref="app.fabrics">Fabrics</a></li>
+    <!--<li ui-sref-active="active" ng-if="!auth.profile"><a href="" ng-click="login()">Fabrics</a></li>-->
     <li ui-sref-active="active"  ng-if="auth.profile"><a href="" ng-click="logout()">Sign Out</a></li>
     <li ui-sref-active="active"  ng-if="!auth.profile"><a href="" ng-click="login()">Sign In</a></li>
       </ul>
