@@ -9,7 +9,7 @@
   <link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:200,300,400,600,700">
   <link rel="stylesheet" type="text/css" href="/css/store.min.css">
 
-  <script type="text/javascript" src="dist/js/store.min.js"></script>
+  <script type="text/javascript" src="/dist/js/store.min.js"></script>
 
   <title>{{ title }} &bull; {{ siteName }}</title>
 
@@ -34,28 +34,28 @@
         <div class="navbar-collapse collapse navbar-right">
           <ul class="nav navbar-nav">
             <li ng-class="{dropdown: category.children}" ng-repeat="category in categories | limitTo: 6">
-              <a data-toggle="dropdown" class="dropdown-toggle" href="dist/category/{{ category.slug }}" ng-if="category.children">{{ category.title }} <b class="caret"></b></a>
-              <a href="dist/category/{{ category.slug }}" ng-if="!category.children">{{ category.title }}</a>
+              <a data-toggle="dropdown" class="dropdown-toggle" href="/dist/category/{{ category.slug }}" ng-if="category.children">{{ category.title }} <b class="caret"></b></a>
+              <a href="/dist/category/{{ category.slug }}" ng-if="!category.children">{{ category.title }}</a>
               <ul class="dropdown-menu" ng-if="category.children">
-                <li ng-repeat-start="child in category.children" ng-if="child.children" class="dropdown-header"><a href="dist/category/{{ child.slug }}">{{ child.title }}</a></li>
-                <li ng-if="child.children" ng-repeat="sub in child.children"><a href="dist/category/{{ sub.slug }}">{{ sub.title }}</a></li>
+                <li ng-repeat-start="child in category.children" ng-if="child.children" class="dropdown-header"><a href="/dist/category/{{ child.slug }}">{{ child.title }}</a></li>
+                <li ng-if="child.children" ng-repeat="sub in child.children"><a href="/dist/category/{{ sub.slug }}">{{ sub.title }}</a></li>
                 <li ng-if="child.children" class="divier"></li>
-                <li ng-if="!child.children" ng-repeat-end><a href="dist/category/{{ child.slug }}">{{ child.title }}</a></li>
+                <li ng-if="!child.children" ng-repeat-end><a href="/dist/category/{{ child.slug }}">{{ child.title }}</a></li>
               </ul>
             </li>
           </ul>
           <ul class="nav navbar-right cart">
             <li class="dropdown">
-              <a href="dist/cart" class="dropdown-toggle" data-toggle="dropdown"><span>{{ cart.total_items }}</span></a>
+              <a href="/dist/cart" class="dropdown-toggle" data-toggle="dropdown"><span>{{ cart.total_items }}</span></a>
               <div class="cart-info dropdown-menu">
                 <table class="table">
                   <tbody>
                     <tr ng-repeat="(key, product) in cart.contents">
                       <td class="image"><img alt="Image" class="img-responsive" ng-src="{{ Page.image.resize(product.image, 100, 100) }}" /></td>
-                      <td class="name"><a href="dist/product/{{ product.slug }}">{{ product.title }}</a></td>
+                      <td class="name"><a href="/dist/product/{{ product.slug }}">{{ product.title }}</a></td>
                       <td class="quantity">x&nbsp;{{ product.quantity }}</td>
                       <td class="total"></td>
-                      <td class="remove"><img src="dist/img/remove-small.png" alt="Remove" title="Remove" ng-id="{{ key }}" ng-qty="0" cart-qty /></td>
+                      <td class="remove"><img src="/dist/img/remove-small.png" alt="Remove" title="Remove" ng-id="{{ key }}" ng-qty="0" cart-qty /></td>
                     </tr>
                   </tbody>
                 </table>
@@ -73,7 +73,7 @@
                     </tbody>
                   </table>
                   <div class="checkout">
-                    <a href="dist/cart" class="ajax_right">View Cart</a> | <a href="dist/checkout" class="ajax_right">Checkout</a>
+                    <a href="/dist/cart" class="ajax_right">View Cart</a> | <a href="/dist/checkout" class="ajax_right">Checkout</a>
                   </div>
                 </div>
               </div>
